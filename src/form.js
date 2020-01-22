@@ -1,30 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 import { Switch, Route, Prompt, Redirect, matchPath } from "react-router-dom";
 import { Formik, Form } from "formik";
 
 import BasicPage from "./form/basic";
 import LocationPage from "./form/location";
 import SubmitPage from "./form/submit";
+const state = {
+  submitted: false
+};
+function handleSubmit() {
+  this.setState(
+    {
+      submitted: true
+    },
+    () => this.props.history.push("/")
+  );
+}
 
-class WizardForm extends Component {
-  state = {
-    submitted: false
-  };
-
-  handleSubmit = () => {
-    this.setState(
-      {
-        submitted: true
-      },
-      () => this.props.history.push("/")
-    );
-  };
-
-  render() {
-    return (
+export default function WizardForm() {
+  return (
+    <>
       <div>
         <Prompt
-          when={!this.state.submitted}
+          when={!state.submitted}
           message={({ pathname }) => {
             return matchPath(pathname, { path: "/form" })
               ? true
@@ -42,7 +40,7 @@ class WizardForm extends Component {
             zipCode: "",
             tos: false
           }}
-          onSubmit={this.handleSubmit}
+          onSubmit={handleSubmit}
         >
           <Form>
             <Switch>
@@ -54,8 +52,6 @@ class WizardForm extends Component {
           </Form>
         </Formik>
       </div>
-    );
-  }
+    </>
+  );
 }
-
-export default WizardForm;
