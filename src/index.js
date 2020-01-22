@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Home from "./home";
 import Form from "./form";
 import { HashRouter, Switch, Route, Link } from "react-router-dom";
-import "./app.css";
 
 const routes = (
   <HashRouter>
