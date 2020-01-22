@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./home";
-import Form from "./form";
+import Stepper from "./form";
 import { HashRouter, Switch, Route, Link } from "react-router-dom";
 
 const routes = (
@@ -12,13 +12,13 @@ const routes = (
           Home
         </Link>
         <Link to="/form" className="link">
-          Wizard
+          Stepper
         </Link>
       </div>
       <div className="tabs">
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/form" component={Form}></Route>
+          <Route path="/form" component={Stepper}></Route>
         </Switch>
       </div>
     </div>

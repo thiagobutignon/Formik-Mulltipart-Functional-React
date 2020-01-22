@@ -17,7 +17,7 @@ function handleSubmit() {
   );
 }
 
-export default function WizardForm() {
+export default function Stepper() {
   return (
     <>
       <div>
