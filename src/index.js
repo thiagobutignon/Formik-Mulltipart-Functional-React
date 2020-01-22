@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./home";
 import Form from "./form";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
 import "./app.css";
 
 const routes = (
-  <BrowserRouter>
+  <HashRouter>
     <div>
       <div className="links">
         <Link to="/" className="link">
@@ -23,7 +23,7 @@ const routes = (
         </Switch>
       </div>
     </div>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 ReactDOM.render(routes, document.getElementById("root"));
