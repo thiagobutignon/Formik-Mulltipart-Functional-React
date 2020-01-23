@@ -5,6 +5,7 @@ import { Formik, Form } from "formik";
 import BasicPage from "./form/basic";
 import LocationPage from "./form/location";
 import SubmitPage from "./form/submit";
+
 const state = {
   submitted: false
 };
@@ -38,6 +39,7 @@ export default function Stepper() {
             city: "",
             state: "",
             zipCode: "",
+            rg: "",
             tos: false
           }}
           onSubmit={handleSubmit}

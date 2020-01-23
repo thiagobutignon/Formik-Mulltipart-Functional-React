@@ -3,14 +3,18 @@ import ReactDOM from "react-dom";
 import Home from "./home";
 import Stepper from "./form";
 import { HashRouter, Switch, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const routes = (
   <HashRouter>
-    <div>
-      <div className="links">
-        <Link to="/" className="link">
-          Home
-        </Link>
+    <div className="row">
+      <div className="col-3">
+        <button className="Primary">
+          <Link to="/" className="link">
+            Home
+          </Link>
+        </button>
+
         <Link to="/form" className="link">
           Stepper
         </Link>
